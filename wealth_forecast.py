@@ -1,4 +1,4 @@
-import csv
+import json
 import pandas as pd
 from datetime import datetime, timedelta
 import os
@@ -7,48 +7,51 @@ import os
 # Enter User Monthly Values Here
 ################################
 
+with open ("inputs.csv", "r") as file:
+    input_data = json.load(file)
+
 # Forecast Details
-forecast_length = 60 # number of months forward
+forecast_length = input_data["forecast_length"] # number of months forward
 
 # Income Details
-ben_salary = 165000 # Annualized Dollar Value
-nadia_salary = 90000 # Annualized Dollar Value
-ben_pay_schedule = 'biweekly' # weekly, biweekly, or monthly
-nadia_pay_schedule = 'weekly' # weekly, biweekly, or monthly
+income_1 = input_data["income_1"] # Annualized Dollar Value
+income_2 = input_data["income_2"] # Annualized Dollar Value
+income_1_pay_schedule = input_data["income_1_pay_schedule"] # weekly, biweekly, or monthly
+income_2_pay_schedule = input_data["income_2_pay_schedule"] # weekly, biweekly, or monthly
 
 # Mortgage Details
-mortgage_origination_date = "08-2020" # MM-YYYY
-mortgage_length = 30 # Number of Years
-mortgage_interest_rate = 0.0299 # Interest rate should be proportion of 1
-mortgage_initial_upb = 320100
-mortgage_current_upb = 289500
-mortgage_prepayment_this_month=0
-current_monthly_escrow = 697.33
-monthly_pmi = 95.00
-recorded_home_valuation = 345000
-mortgage_one_time_prepayment = 0
-recurring_mortgage_prepayment = 0
+mortgage_origination_date = input_data["mortgage_origination_date"] # MM-YYYY
+mortgage_length = input_data["mortgage_length"] # Number of Years
+mortgage_interest_rate = input_data["mortgage_interest_rate"]  # Interest rate should be proportion of 1
+mortgage_initial_upb = input_data["mortgage_initial_upb"]
+mortgage_current_upb = input_data["mortgage_current_upb"]
+mortgage_prepayment_this_month = input_data["mortgage_prepayment_this_month"]
+current_monthly_escrow = input_data["current_monthly_escrow"]
+monthly_pmi = input_data["monthly_pmi"]
+recorded_home_valuation = input_data["recorded_home_valuation"]
+mortgage_one_time_prepayment = input_data["mortgage_one_time_prepayment"]
+recurring_mortgage_prepayment = input_data["recurring_mortgage_prepayment"]
 
 # Other Loan Details
-student_loan_avg_interest_rate = .061
-student_loan_initial_upb = 61000
-student_loan_current_upb = 50500
-student_loan_term = 10 # Number of Years
+student_loan_avg_interest_rate = input_data["student_loan_avg_interest_rate"]
+student_loan_initial_upb = input_data["student_loan_initial_upb"]
+student_loan_current_upb = input_data["student_loan_current_upb"]
+student_loan_term = input_data["student_loan_term"] # Number of Years
 
-student_loan_prepayment_this_month= 0
-student_loan_recurring_prepayment = 1000
-car_loan_one_time_prepayment = 0
-car_loan_recurring_prepayment = 0
+student_loan_prepayment_this_month= input_data["student_loan_prepayment_this_month"]
+student_loan_recurring_prepayment = input_data["student_loan_recurring_prepayment"]
+car_loan_one_time_prepayment = input_data["car_loan_one_time_prepayment"]
+car_loan_recurring_prepayment = input_data["car_loan_recurring_prepayment"]
 
 # Investment Details
-avg_equity_return = .08 # Represent return as proportion of 1 - 8% = .08
-ben_401k_pretax_contribution_rate = 0.135
-nadia_401k_pretax_contribution_rate = 0
+avg_equity_return = input_data["avg_equity_return"] # Represent return as proportion of 1 - 8% = .08
+ben_401k_pretax_contribution_rate = input_data["ben_401k_pretax_contribution_rate"]
+nadia_401k_pretax_contribution_rate = input_data["nadia_401k_pretax_contribution_rate"]
 
 # Saving Account Details
 
 # Tax Details
-marginal_tax_rate = 0.24
+marginal_tax_rate = input_data["marginal_tax_rate"]
 
 ############################################
 ## Setting Up Incomes, Debts, Investments ##
