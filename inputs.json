@@ -1,30 +1,129 @@
 {
-"forecast_length": 60,
-"income_1": 165000,
-"income_2": 90000,
-"income_1_pay_schedule": "biweekly",
-"income_2_pay_schedule": "weekly",
-"mortgage_origination_date": "08-2020",
-"mortgage_length": 30,
-"mortgage_interest_rate": 0.0299,
-"mortgage_initial_upb": 320100,
-"mortgage_current_upb": 289500,
-"mortgage_prepayment_this_month": 0,
-"current_monthly_escrow": 697.33,
-"monthly_pmi": 95.00,
-"recorded_home_valuation": 345000,
-"mortgage_one_time_prepayment": 0,
-"recurring_mortgage_prepayment": 0,
-"student_loan_avg_interest_rate": 0.061,
-"student_loan_initial_upb": 61000,
-"student_loan_current_upb": 50500,
-"student_loan_term": 10,
-"student_loan_prepayment_this_month": 0,
-"student_loan_recurring_prepayment": 1000,
-"car_loan_one_time_prepayment": 0,
-"car_loan_recurring_prepayment": 0,
-"avg_equity_return": 0.08,
-"income_1_401k_pretax_contribution_rate": 0.135,
-"income_2_401k_pretax_contribution_rate": 0,
-"marginal_tax_rate": 0.24
+    "forecast": 
+        {
+        "forecast_length": 60
+        },
+    "income": 
+        {
+        "income_1_base_amount": 165000,
+        "income_2_base_amount": 90000,
+        "income_1_pay_schedule": "biweekly",
+        "income_2_pay_schedule": "weekly",
+        "income_1_paycheck_non401k_pre_tax_deductions": 363.11,
+        "income_2_paycheck_non401k_pre_tax_deductions": 30.00
+        },
+    "mortgage": 
+        {
+        "mortgage_origination_date": "08-2020",
+        "mortgage_length": 30,
+        "mortgage_interest_rate": 0.0299,
+        "mortgage_initial_upb": 320100,
+        "mortgage_current_upb": 289500,
+        "mortgage_prepayment_this_month": 0,
+        "current_monthly_escrow": 697.33,
+        "monthly_pmi": 95.00,
+        "recorded_home_valuation": 345000,
+        "mortgage_one_time_prepayment": 0,
+        "recurring_mortgage_prepayment": 0
+        },
+    "student_loans": 
+        {
+        "student_loan_origination_date": "08-2020",
+        "student_loan_avg_interest_rate": 0.061,
+        "student_loan_initial_upb": 61000,
+        "student_loan_current_upb": 50500,
+        "student_loan_term": 10,
+        "student_loan_prepayment_this_month": 0,
+        "student_loan_recurring_prepayment": 1000
+        },
+    "car_loan": 
+        {
+        "car_loan_origination_date": "10-2024",
+        "car_loan_initial_upb": 14100,
+        "car_loan_interest_rate": 0.0499,
+        "car_loan_term_length": 36,
+        "car_loan_current_upb": 11200,
+        "car_loan_one_time_prepayment": 0,
+        "car_loan_recurring_prepayment": 0
+        },
+    "savings": 
+        {
+        "account_1": {
+            "current_account_value": 20400,
+            "current_account_interest_rate": 0.044, 
+            "income1_base_monthly_contribution": 0,
+            "income1_base_monthly_contribution_percent": 0,
+            "income1_base_monthly_deduction": 0,
+            "income1_base_monthly_deduction_percent": 0,
+            "income1_current_month_contribution": 0,
+            "income1_current_month_deduction": 0,
+            "income2_base_monthly_contribution": 0,
+            "income2_base_monthly_contribution_percent": 0,
+            "income2_base_monthly_deduction": 0,
+            "income2_base_monthly_deduction_percent": 0,
+            "income2_current_month_contribution": 0,
+            "income2_current_month_deduction": 0
+            },
+        "account_2": {
+            "current_account_value": 1500,
+            "current_account_interest_rate": 0.044, 
+            "income1_base_monthly_contribution": 0,
+            "income1_base_monthly_contribution_percent": 0,
+            "income1_base_monthly_deduction": 0,
+            "income1_base_monthly_deduction_percent": 0,
+            "income1_current_month_contribution": 0,
+            "income1_current_month_deduction": 0,
+            "income2_base_monthly_contribution": 0,
+            "income2_base_monthly_contribution_percent": 0,
+            "income2_base_monthly_deduction": 0,
+            "income2_base_monthly_deduction_percent": 0,
+            "income2_current_month_contribution": 0,
+            "income2_current_month_deduction": 0
+        },
+        "cd": {
+            "current_account_value": 25400,
+            "current_account_interest_rate": 0.055, 
+            "income1_base_monthly_contribution": 0,
+            "income1_base_monthly_contribution_percent": 0,
+            "income1_base_monthly_deduction": 0,
+            "income1_base_monthly_deduction_percent": 0,
+            "income1_current_month_contribution": 0,
+            "income1_current_month_deduction": 0,
+            "income2_base_monthly_contribution": 0,
+            "income2_base_monthly_contribution_percent": 0,
+            "income2_base_monthly_deduction": 0,
+            "income2_base_monthly_deduction_percent": 0,
+            "income2_current_month_contribution": 0,
+            "income2_current_month_deduction": 0
+        }
+
+    },
+    "investments": {
+        "avg_equity_return": 0.08,
+        "active_401ks": {
+            "income_1": {
+                "current_acct_value": 16100,
+                "employee_contribution_pct": 0.135,
+                "employer_contribution_pct": 0.08
+            },
+            "income_2": {
+                "current_acct_value": 0,
+                "employee_contribution_pct": 0.10,
+                "employer_contribution_pct": 0.00
+            }
+        },
+        "iras": {
+            "ira_1":{
+                    "current_acct_value": 96900,
+                    "current_monthly_contribution": 0
+            },
+            "ira_2":{
+                "current_acct_value": 50000,
+                "current_monthly_contribution": 0
+            }
+        }   
+    },
+    "taxes": {
+        "marginal_tax_rate": 0.24
+    }
 }
